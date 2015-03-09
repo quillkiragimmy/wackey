@@ -17,6 +17,9 @@ vk.o: vk.cpp vk.h c2k.h
 wackey.o: wackey.h
 	$(CC) $(INC) -c wackey.cpp
 
+c2k.o: c2k.cpp
+	$(CC) $(INC) -c c2k.cpp
+
 clean:
 	@rm -f wackey *.o 
 	

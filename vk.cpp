@@ -74,7 +74,7 @@ void vk::release(char key){
 	evt.code = c2k[key];
 	evt.value = 0;
 
-//	write(fd, &evt, sizeof(evt));
+	write(fd, &evt, sizeof(evt));
 	printf("release %c\n", key);
 
 	gettimeofday(&t, NULL);
@@ -82,7 +82,7 @@ void vk::release(char key){
 	evt.type = EV_SYN;
 	evt.code = 0;
 	evt.value = 0;
-//	write(fd, &evt, sizeof(evt));
+	write(fd, &evt, sizeof(evt));
 
 }
 
