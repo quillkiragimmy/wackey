@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+orgDir="$(pwd)"
+scriptDir=$(dirname "$(realpath $0)")
+ 
+export DISPLAY=:0.0
+export XAUTHORITY=/home/patricius/.Xauthority
+
+button () {
+	while read line; do
+		echo $line| grep Set
+	done
+}
+
+cd "$scriptDir"
+while true; do
+	./wackey neo_happy
+#	./wackey happy
+	sleep 4
+done
+
+trap "cd $orgDir" SIGHUP SIGINT SIGTERM
+
